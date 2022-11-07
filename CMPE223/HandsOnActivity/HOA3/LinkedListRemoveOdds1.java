@@ -2,6 +2,12 @@ package CMPE223.HandsOnActivity.HOA3;
 
 import java.io.*;
 
+public class LinkedListRemoveOdds1 {
+    public static void main(String[] args){
+
+    }
+}
+/*
 public class Node {
     int item;
     Node next;
@@ -21,7 +27,7 @@ public class SLinkedList {
     public void removeOdds() {
         Node current = head;
         Node previous=null;
-        while ((current.getNext()) != null) {
+        /*while ((current.getNext()) != null) {
             if (head == null) {
                 System.out.println("The list is empty");
             } else {
@@ -38,5 +44,5 @@ public class SLinkedList {
     
                 } 
             }
-        } 
-}
+        }
+}*/

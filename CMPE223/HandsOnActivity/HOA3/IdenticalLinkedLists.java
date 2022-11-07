@@ -2,6 +2,13 @@ package CMPE223.HandsOnActivity.HOA3;
 
 import java.io.*;
 
+public class IdenticalLinkedLists {
+    public static void main(String[] args){
+
+    }
+}
+
+/*
 public class Node {
     int item;
     Node next;
@@ -57,4 +64,4 @@ public class SLinkedList {
         else
             System.out.println("They are not identical ");
     }
-} 
+} */
