@@ -20,15 +20,17 @@ int main() {
     
     // Initialize x_n_0 and x_n_1
     xn_prev = x = 10;
-    xn_next = a * x * x + b * x + c;
-    
+    //xn_next = a * x * x + b * x + c;
+    xn_next = x * b + (-b + sqrt(b * b - 4 * a * c)) / (2 * a);
+
     // Print x values within range
-    for (int n = 2; n <= max_xn; n++) {
+    for (int n = 0; n <= max_xn; n++) {
         if (n >= min_xn) {
             printf("x_%d: %.2f\n", n, x);
         }
         x = xn_next;
-        xn_next = a * x * x + b * x + c;
+        //xn_next = a * x * x + b * x + c;
+        xn_next = x * b + (-b + sqrt(b * b - 4 * a * c)) / (2 * a);
     }
     
     return 0;

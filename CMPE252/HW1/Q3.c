@@ -1,99 +1,56 @@
-// Declare the required header file
-
 #include <stdio.h>
 #include <math.h>
 
-// Define the Pi
-
-#define PI 3.14159
-
-// Create a g(x) function
-
-double gx(double x) {
-  // return g(x) = x^2sin(x)
-  return pow(x, 2) * sin(x);
-
+/*double f(double x) {
+    return pow(x, 2) * sin(x); // function g(x) = x^2 * sin(x)
 }
 
-// Create h(x) function
-
-double hx(double x) {
-  // return h(x)= sqrt(4-x^2)
-  return sqrt(4 - pow(x, 2));
+double h(double x) {
+    return sqrt(4 - pow(x, 2)); // function h(x) = sqrt(4 - x^2)
 }
 
-// Write a function trap with input parameters
+double trap(double a, double b, int n, double (*f)(double)) {
+    double h = (b - a) / n;
+    double sum = 0.5 * (f(a) + f(b));
+    for (int i = 1; i < n; i++) {
+        double x = a + i * h;
+        sum += f(x);
+    }
+    return h * sum;
+}*/
 
-// a, b, n, and f
+int main() {
+    float a, b, c, d, n; 
+    double function;
+    //int t;
 
-double trap(int n, double a, double b, char F){
-  // Compute the interval
-  double h = (b - a) / n;
-  // Declare the required variables
-  double trapsum = 0;
+    // Read input values
+    printf("Enter value of a: ");
+    scanf("%f", &a);
+    printf("Enter value of b: ");
+    scanf("%f", &b);
+    printf("Enter value of n: ");
+    scanf("%f", &n);
+    printf("Enter value of c: ");
+    scanf("%f", &c);
+    printf("Enter value of d: ");
+    scanf("%f", &d);
+    
+    double sumofareas = 0;
+    //double T = trap(a, b, n, f);
+    int h = (b - a) / n; 
 
-double trapaproximation;
+    for (int x = a; x <= b; x++) {
+        if ((((int)(x-a) % h) == 0) && (x != a) && (x != b)){
+          function = pow(x,c) + 2 * d;
+          //printf("f(x): %.2f\n", function);
+          sumofareas += function;
+          //printf("It really works!");
+        }
+    }
 
-double i;
+    double T = ((b - a) / (2 * n)) * ((pow(a,c)+2*d) + (pow(b,c)+2*d) + 2 * sumofareas); // finding the area of the trapezoid
+    printf("T: %.2f\n", T);
 
-// Check when F is equal to g
-
-if(F=='g'){
-  // for loop iterate the trapezoidal
-  for (i = a + h; i <= b - h; i += h)
-    // call the fucntion g(x)
-    trapsum += gx(i);
-  // copute the area area_approximation
-  trapaproximation = (h / 2) * (gx(a) + gx(b) + 2 * trapsum);
-  // return the area_approximation
-  return trapaproximation;
-}
-
-// otherwise
-
-else {
-  // for loop iterate the trapezoidal
-  for (i = a + h; i <= b - h; i += h)
-    // call the function h(x)
-    trapsum += hx(i);
-  // // compute the area area_approximation
-  trapaproximation = (h / 2) * (hx(a) + hx(b) + 2 * trapsum);
-  // return the area_approximation
-  return trapaproximation;
-}
-
-}
-
-// Create a main function of the program
-
-int main(int argc, char *argv[]) {
-  
-  // Declare the required variables
-  
-  int n;
-  
-  // Display the g(x) result
-  
-  printf("TRAPEZOIDAL RULE g(x) = x^2sin(x), a = 0, b = PI(3.14159)\n");
-  
-  // for loop to display the result from 2 to 128
-  
-  for (n = 2; n <= 128; n *= 2){
-    // Display the trapezoidal result
-    // for n of 2 to 128
-    printf("for n = %d, area is approximately %.4f\n", n, trap(n, 0, PI, 'g'));
-  }
-  
-  printf("\n");
-  
-  // Display the result for h(x)
-  printf("TRAPEZOIDAL RULE h(x) = sqrt(4 - x^2), a = -2, b = 2\n");
-  
-  for (n = 2; n <= 128; n *= 2){
-    // Display the result from n of 2 t0 128
-    printf("for n = %d, area is approximately %.4f\n", n, trap(n, -2, 2, 'h'));
-  }
-  
-  return 0;
-
+    return 0;
 }
