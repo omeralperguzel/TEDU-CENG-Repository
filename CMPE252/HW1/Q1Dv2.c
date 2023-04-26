@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
 
@@ -52,28 +53,6 @@ int main() {
             printf("Team %d: %d\n", team_id, points);
             //num_teams++;
         }
-
-    /*while (fscanf(fp, "%d %s", &team_id, result) != EOF) {
-        points = 0;
-        for (i = 0; result[i] != '\0'; i++) {
-            if (result[i] == 'W') {
-                points += 3;
-            } else if (result[i] == 'D') {
-                points += 1;
-            }
-        }
-        printf("Team %d: %d\n", team_id, points);
-        num_teams++;
-    }*/
-
-    //printf("There are %d teams in total.\n",num_teams);
-
-    /*
-    for (int i = 1; i <= team_id; i++) {
-        if (result[i] > 0) {
-            printf("Team %d: %d\n", i, result[i]);
-        }
-    }*/
 
     fclose(fp); // close the input file
     return 0;
