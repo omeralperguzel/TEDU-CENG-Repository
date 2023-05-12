@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// First, define a struct to represent a rating node
+// First, define a struct to represent a rating node in the linked list
 typedef struct rating {
     int user_id;
     int item_id;
@@ -10,18 +10,18 @@ typedef struct rating {
     struct rating *next;
 } RatingNode;
 
-// This function is used for inserting a new rating into the linked list
+// This function is used for inserting a new rating into the linked list or updating an existing rating
 void insertRating(RatingNode **head, int user_id, int item_id, float value) {
     RatingNode *node = *head;
     RatingNode *prev = NULL;
     
-    // Look for a node with matching user and item IDs
+    // Look for a node with matching user and item IDs in the list
     while (node != NULL && (node->user_id != user_id || node->item_id != item_id)) {
         prev = node;
         node = node->next;
     }
     
-    // If a matching node is found, update the rating value
+    // If a matching node is found, update the rating value and print a message
     if (node != NULL) {
         node->value = value;
         printf("Customer rating (%d, %d) is updated\n", user_id, item_id);
@@ -50,7 +50,7 @@ void removeRating(RatingNode **head, int user_id, int item_id) {
     RatingNode *node = *head;
     RatingNode *prev = NULL;
     
-    // Look for a node with matching user and item IDs
+    // Look for a node with matching user and item IDs in the list
     while (node != NULL && (node->user_id != user_id || node->item_id != item_id)) {
         prev = node;
         node = node->next;
@@ -66,7 +66,8 @@ void removeRating(RatingNode **head, int user_id, int item_id) {
         
         free(node);
         printf("Customer rating (%d, %d) is removed successful\n", user_id, item_id);
-    } else {
+    } 
+    else {
         printf("Customer rating (%d, %d) does not exist\n", user_id, item_id);
     }
 }
@@ -75,12 +76,12 @@ void removeRating(RatingNode **head, int user_id, int item_id) {
 float getRating(RatingNode *head, int user_id, int item_id) {
     RatingNode *node = head;
     
-    // Look for a node with matching user and item IDs
+    // Look for a node with matching user and item IDs in the list
     while (node != NULL && (node->user_id != user_id || node->item_id != item_id)) {
         node = node->next;
     }
     
-    // If a matching node is found, return the rating value
+    // If a matching node is found, return the rating value for that node
     if (node != NULL) {
         return node->value;
     } else {
