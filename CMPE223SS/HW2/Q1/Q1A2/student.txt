@@ -1,0 +1,10 @@
+Ali,12345,8
+Veli,1234,6
+Bedrettin,1112,1
+Ahmet,12345,6
+Deniz,12345,8
+Ayşe,4433,5
+Derya,1103,9
+Ada,1234,7
+Bahar,1234,7
+Mehmet,1112,3
