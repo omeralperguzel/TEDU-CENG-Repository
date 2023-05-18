@@ -1,3 +1,11 @@
+//-----------------------------------------------------
+//Title: Main
+//Author: Ömer Alper Güzel
+//Section: 2
+//Assignment: 2 Q1
+//Description: This is a Java program that allows the user to sort an array of integers and doubles by using insertion sort algorithm. Then it sorts the array of integers in descending order. Finally, it sorts the array of students by using comparable interface.
+//-----------------------------------------------------
+
 package CMPE223SS.HW2.Q1.Q1A2;
 
 import java.io.File;

@@ -1,3 +1,11 @@
+//-----------------------------------------------------
+//Title: Pairwise
+//Author: Ömer Alper Güzel
+//Section: 2
+//Assignment: 2 Q2
+//Description: This is a Java program that allows the user to create and manage stack by using the linked list implementation method.
+//-----------------------------------------------------
+
 package CMPE223SS.HW2.Q2.Try1;
 
 import java.util.Arrays;

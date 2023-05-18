@@ -1,0 +1,6 @@
+Adem 0,Ali 1
+Ali 1,Veli 2
+Veli 2,Ahmet 3
+Ahmet 3,Ali 4
+Ahmet 3,Seyma 5
+Ahmet 3,Hasan 6

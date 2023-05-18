@@ -1,8 +1,17 @@
+//-----------------------------------------------------
+//Title: Pairwise
+//Author: Ömer Alper Güzel
+//Section: 2
+//Assignment: 2 Q2
+//Description: This is a Java program that allows the user to test the sorting algorithms.
+//-----------------------------------------------------
+
 package CMPE223SS.HW2.Q2.Try3;
 
 import java.util.Arrays;
 import java.util.Random;
 
+//This class is used to test the sorting algorithms
 public class Tester {
     public static void main(String[] args) {
         int[] arr;
@@ -21,6 +30,7 @@ public class Tester {
         }
     }
 
+    // Test all sorting algorithms on the given array
     public static void testAllSortAlgorithms(int[] arr) {
         smallestPairwiseDifference(arr, "Selection");
         smallestPairwiseDifference(arr, "Insertion");
@@ -29,6 +39,7 @@ public class Tester {
         smallestPairwiseDifference(arr, "noSort");
     }
 
+    // Generate an array of size "size" with ascending values
     public static int[] generateAscendingArray(int size) {
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
@@ -37,6 +48,7 @@ public class Tester {
         return arr;
     }
 
+    // Generate an array of size "size" with descending values
     public static int[] generateDescendingArray(int size) {
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
@@ -45,6 +57,7 @@ public class Tester {
         return arr;
     }
 
+    // Generate an array of size "size" with random values
     public static int[] generateRandomArray(int size, Random rand) {
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
@@ -53,6 +66,7 @@ public class Tester {
         return arr;
     }
 
+    // It sorts the array using the given sorting algorithm and finds the smallest pairwise difference
     public static void smallestPairwiseDifference(int[] arr, String sortAlgorithm) {
         long startTime = System.currentTimeMillis();
         switch (sortAlgorithm) {
@@ -98,6 +112,7 @@ public class Tester {
         System.out.println("ABS:" + minDiff + ", Min=" + num1 + ", Max=" + num2 + ", Time: " + (endTime - startTime) + " ms");
     }
 
+    // Sort the array using selection sort algorithm
     public static void selectionSort(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
@@ -113,6 +128,7 @@ public class Tester {
         }
     }
 
+    // Sort the array using insertion sort algorithm
     public static void insertionSort(int[] arr) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
@@ -126,6 +142,7 @@ public class Tester {
         }
     }
 
+    // Sort the array using merge sort algorithm
     public static void mergeSort(int[] arr) {
         int n = arr.length;
         if (n > 1) {
@@ -164,10 +181,12 @@ public class Tester {
         }
     }
 
+    // Sort the array using quick sort algorithm
     public static void quickSort(int[] arr) {
         quickSortHelper(arr, 0, arr.length - 1);
     }
 
+    // Helper method for quick sort
     public static void quickSortHelper(int[] arr, int low, int high) {
         if (low < high) {
             int pivotIndex = partition(arr, low, high);
@@ -176,6 +195,7 @@ public class Tester {
         }
     }
 
+    // This method partitions the array and returns the pivot index
     public static int partition(int[] arr, int low, int high) {
         int pivot = arr[high];
         int i = low - 1;
