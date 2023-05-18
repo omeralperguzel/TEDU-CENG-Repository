@@ -1,7 +1,6 @@
 //-----------------------------------------------------
 //Title: Main
 //Author: Ömer Alper Güzel
-//ID: 16057474442
 //Section: 2
 //Assignment: 1 Q3
 //Description: This is a Java program that reads a matrix from a file and checks if it is a type 1, type 2, or type 3 matrix. 

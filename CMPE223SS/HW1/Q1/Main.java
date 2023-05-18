@@ -1,7 +1,6 @@
 //-----------------------------------------------------
 //Title: Main
 //Author: Ömer Alper Güzel
-//ID: 16057474442
 //Section: 2
 //Assignment: 1 Q1
 //Description: This is a Java program that Student.java and Stack.java are used to create a student object, add it to the stack and linkedList, removes the students from the stack and linkedList, summarizes the students in the stack and linkedList, and exits the program.

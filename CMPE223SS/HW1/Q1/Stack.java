@@ -1,7 +1,6 @@
 //-----------------------------------------------------
 //Title: Stack
 //Author: Ömer Alper Güzel
-//ID: 16057474442
 //Section: 2
 //Assignment: 1 Q1
 //Description: This is a Java program that allows the user to create and manage stack by using the linked list implementation method.

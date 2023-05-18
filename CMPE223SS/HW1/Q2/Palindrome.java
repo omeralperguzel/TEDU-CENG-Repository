@@ -1,7 +1,6 @@
 //-----------------------------------------------------
 //Title: Palindrome
 //Author: Ömer Alper Güzel
-//ID: 16057474442
 //Section: 2
 //Assignment: 1 Q2
 //Description: This is a Java program that allows the user to check if the string is a palindrome or not.   
