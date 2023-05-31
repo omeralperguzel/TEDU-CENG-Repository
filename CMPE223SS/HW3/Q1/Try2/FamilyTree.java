@@ -1,3 +1,11 @@
+//-----------------------------------------------------
+//Title: Main
+//Author: Ömer Alper Güzel
+//Section: 2
+//Assignment: 3 Q1
+//Description: This is a Java program that allows the user to create a family tree, find a person in the tree and print all the descendants of a person.
+//-----------------------------------------------------
+
 package CMPE223SS.HW3.Q1.Try2;
 
 import java.io.File;
@@ -11,6 +19,7 @@ class FamilyTree {
         this.root = root;
     }
 
+    // This is the createFamilyTree method used for creating a family tree from a file
     public static FamilyTree createFamilyTree(String filename) throws FileNotFoundException {
         Scanner scanner = new Scanner(new File(filename));
         Map<Integer, Person> idToPerson = new HashMap<>();
@@ -30,6 +39,7 @@ class FamilyTree {
         return new FamilyTree(idToPerson.get(0));
     }
 
+    // This is the printAllDescendants method used for printing all the descendants of a person
     public void printAllDescendants(int id) {
         Person person = findPerson(root, id);
         if (person != null) {
@@ -42,6 +52,7 @@ class FamilyTree {
         }
     }
 
+    // This is the checkAncestor method used for checking if a person is an ancestor of another person
     public boolean checkAncestor(int id1, int id2) {
         Person person1 = findPerson(root, id1);
         Person person2 = findPerson(root, id2);
@@ -51,6 +62,7 @@ class FamilyTree {
         return false;
     }
 
+    // This is the checkDescendant method used for checking if a person is a descendant of another person
     public boolean checkDescendant(int id1, int id2) {
         Person person1 = findPerson(root, id1);
         Person person2 = findPerson(root, id2);
@@ -60,6 +72,7 @@ class FamilyTree {
         return false;
     }
 
+    // This is the checkSibling method used for checking if a person is a sibling of another person
     public boolean checkSibling(int id1, int id2) {
         Person person1 = findPerson(root, id1);
         Person person2 = findPerson(root, id2);
@@ -71,6 +84,7 @@ class FamilyTree {
         return false;
     }
 
+    // This is the findOldestCommonRelative method used for finding the oldest common relative of two people
     public String findOldestCommonRelative(int id1, int id2) {
         Person person1 = findPerson(root, id1);
         Person person2 = findPerson(root, id2);
@@ -87,6 +101,7 @@ class FamilyTree {
         return null;
     }
 
+    // This is the findPerson method used for finding a person in the tree
     private Person findPerson(Person person, int id) {
         if (person.id == id) {
             return person;
@@ -100,6 +115,7 @@ class FamilyTree {
         return null;
     }
 
+    // This is the collectDescendants method used for collecting all the descendants of a person
     private void collectDescendants(Person person, List<Person> descendants) {
         descendants.add(person);
         for (Person child : person.children) {
@@ -107,6 +123,7 @@ class FamilyTree {
         }
     }
 
+    // This is the isAncestor method used for checking if a person is an ancestor of another person
     private boolean isAncestor(Person ancestor, Person person) {
         if (ancestor == person) {
             return true;
@@ -119,6 +136,7 @@ class FamilyTree {
         return false;
     }
 
+    // This is the isDescendant method used for checking if a person is a descendant of another person
     private boolean isDescendant(Person person, Person descendant) {
         if (person == descendant) {
             return true;
@@ -131,6 +149,7 @@ class FamilyTree {
         return false;
     }
 
+    // This is the findParent method used for finding the parent of a person
     private Person findParent(Person parent, Person child) {
         for (Person p : parent.children) {
             if (p == child) {
@@ -144,6 +163,7 @@ class FamilyTree {
         return null;
     }
 
+    // This is the collectAncestors method used for collecting all the ancestors of a person
     private void collectAncestors(Person person, Set<Person> ancestors) {
         Person parent = findParent(root, person);
         if (parent != null) {

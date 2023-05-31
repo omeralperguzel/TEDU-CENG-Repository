@@ -1,3 +1,11 @@
+//-----------------------------------------------------
+//Title: Main
+//Author: Ömer Alper Güzel
+//Section: 2
+//Assignment: 3 Q1
+//Description: This is a Java program that allows the user to use several operations on a family tree.
+//-----------------------------------------------------
+
 package CMPE223SS.HW3.Q1.Try2;
 
 import java.io.File;
@@ -11,39 +19,52 @@ public class Main {
         String filename = scanner.nextLine();
         FamilyTree familyTree = createFamilyTree(filename);
         while (true) {
+            // This is the first operation used for asking the user to enter the operation code.
             System.out.print("Enter operation code: ");
             int operationCode = scanner.nextInt();
+            //It is used for printing all descendants of a person.
             if (operationCode == 1) {
                 System.out.print("Enter ID: ");
                 int id = scanner.nextInt();
                 familyTree.printAllDescendants(id);
-            } else if (operationCode == 2) {
+            } 
+            // It is used for checking if a person is an ancestor of another person.
+            else if (operationCode == 2) {
                 System.out.print("Enter IDs: ");
                 int id1 = scanner.nextInt();
                 int id2 = scanner.nextInt();
                 System.out.println(familyTree.checkAncestor(id1, id2));
-            } else if (operationCode == 3) {
+            } 
+            // It is used for checking if a person is a descendant of another person.
+            else if (operationCode == 3) {
                 System.out.print("Enter IDs: ");
                 int id1 = scanner.nextInt();
                 int id2 = scanner.nextInt();
                 System.out.println(familyTree.checkDescendant(id1, id2));
-            } else if (operationCode == 4) {
+            } 
+            // It is used for checking if two people are siblings.
+            else if (operationCode == 4) {
                 System.out.print("Enter IDs: ");
                 int id1 = scanner.nextInt();
                 int id2 = scanner.nextInt();
                 System.out.println(familyTree.checkSibling(id1, id2));
-            } else if (operationCode == 5) {
+            } 
+            // It is used for finding the oldest common relative of two people.
+            else if (operationCode == 5) {
                 System.out.print("Enter IDs: ");
                 int id1 = scanner.nextInt();
                 int id2 = scanner.nextInt();
                 System.out.println(familyTree.findOldestCommonRelative(id1, id2));
-            } else if (operationCode == 6) {
+            } 
+            // It is used for stopping the program.
+            else if (operationCode == 6) {
                 System.out.println("Stopped!");
                 break;
             }
         }
     }
 
+    // This method is used for creating a family tree from a file.
     private static FamilyTree createFamilyTree(String filename) {
         Person root = null;
         try {
@@ -79,6 +100,7 @@ public class Main {
         return new FamilyTree(root);
     }
 
+    // This method is used for finding a person in a family tree.
     private static Person findPerson(Person person, int id) {
         if (person.getId() == id) {
             return person;

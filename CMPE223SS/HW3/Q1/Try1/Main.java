@@ -1,3 +1,11 @@
+//-----------------------------------------------------
+//Title: Main
+//Author: Ömer Alper Güzel
+//Section: 2
+//Assignment: 3 Q1
+//Description: This is a Java program that allows the user to perform sorting and find the minimum and maximum difference between two numbers in an array.
+//-----------------------------------------------------
+
 package CMPE223SS.HW3.Q1.Try1;
 
 import java.io.File;
