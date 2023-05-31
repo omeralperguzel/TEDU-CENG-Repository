@@ -59,7 +59,7 @@ public class Main {
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                String[] parts = line.split(" ");
+                String[] parts = line.split(",");
                 String name1 = parts[0];
                 int id1 = Integer.parseInt(parts[1]);
                 String name2 = parts[2];

@@ -6,7 +6,7 @@
 //Description: This is a Java program that allows the user to use several operations on a family tree.
 //-----------------------------------------------------
 
-package CMPE223SS.HW3.Q1.Try2;
+package CMPE223SS.HW3.Q1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -72,11 +72,17 @@ public class Main {
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                String[] parts = line.split(" ");
-                String name1 = parts[0];
-                int id1 = Integer.parseInt(parts[1]);
-                String name2 = parts[2];
-                int id2 = Integer.parseInt(parts[3]);
+                String[] parts = line.split(",");
+                String[] partsleft = parts[0].split(" ");
+                String[] partsright = parts[1].split(" ");                
+                //System.out.println(partsleft[0]);
+                //System.out.println(partsleft[1]);
+                //System.out.println(partsright[0]);
+                //System.out.println(partsright[1]);
+                String name1 = partsleft[0];
+                int id1 = Integer.parseInt(partsleft[1]);
+                String name2 = partsright[0];
+                int id2 = Integer.parseInt(partsright[1]);
                 if (root == null) {
                     root = new Person(name1, id1);
                     root.addChild(new Person(name2, id2));

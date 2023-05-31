@@ -6,7 +6,7 @@
 //Description: This is a Java program that allows the user to create new people and use them in a tree.
 //-----------------------------------------------------
 
-package CMPE223SS.HW3.Q1.Try2;
+package CMPE223SS.HW3.Q1;
 
 import java.util.ArrayList;
 import java.util.List;

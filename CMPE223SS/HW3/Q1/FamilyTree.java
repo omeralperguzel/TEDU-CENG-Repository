@@ -6,7 +6,7 @@
 //Description: This is a Java program that allows the user to create a family tree, find a person in the tree and print all the descendants of a person.
 //-----------------------------------------------------
 
-package CMPE223SS.HW3.Q1.Try2;
+package CMPE223SS.HW3.Q1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
