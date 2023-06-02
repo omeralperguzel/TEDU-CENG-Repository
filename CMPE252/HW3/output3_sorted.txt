@@ -1,0 +1,19 @@
+Enter the input file name: input3.txt
+Sort the results? (yes/no): yes
+Ali Serhat 119.00
+AYCAN FERHAT CAN 119.00
+BAKIR Ece Ayse 119.00
+Can Eren Mert 117.00
+Deniz Murat 118.00
+Dere Deniz Huseyin 120.00
+Deren Sevgi 121.00
+Kale Bedri Han 122.00
+KAYA Ugur Baran 124.00
+MERTCAN Eren 109.00
+Mutlu Melike 118.00
+OZYILMAZ Alperen 28.00
+Sener Ayse Gul 125.00
+Sever Aydan 114.00
+YENER Gamze Ece Nur 122.00
+YILMAZ Beren 120.00
+YILMAZ Emre Can Kutay 120.00

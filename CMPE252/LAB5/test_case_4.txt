@@ -1,0 +1,30 @@
+
+ID  Name                 Surname              Genre                Follower Count
+4   Vanoss               Gaming               RPG                  124
+7   Captain              Sparklez             Action               141
+13  Dan                  TDM                  FPS                  166
+17  H2O                  Delirious            Strategy             176
+22  Kendine              Muzisyen             RPG                  141
+32  Enis                 Kirazoglu            RPG                  141
+
+Which operation do you choose?
+1 : Update Follower Count
+2 : Add Gamer
+3 : Delete Gamer
+4 : View Genre Info with Follower
+> 2
+
+Gamer id: 8
+Name: Ali
+Surname: theA
+Genre: Platform
+Follower Count: 238
+
+ID  Name                 Surname              Genre                Follower Count
+4   Vanoss               Gaming               RPG                  124
+7   Captain              Sparklez             Action               141
+8   Ali                  theA                 Platform             238
+13  Dan                  TDM                  FPS                  166
+17  H2O                  Delirious            Strategy             176
+22  Kendine              Muzisyen             RPG                  141
+32  Enis                 Kirazoglu            RPG                  141

@@ -1,0 +1,11 @@
+Enter the input file name: input1.txt
+Sort the results? (yes/no): no
+Duman Feyza Nur 122.00
+YILMAZ Eda Nur 97.00
+YAMAC Serhat Gokhan 118.00
+Yamac Duru 117.00
+Gencel Asya Hale 118.00
+Ceyhun Taner 117.00
+TERZI Sevil 110.00
+Tekin Ilhan 118.00
+Safak Aytekin 120.00
