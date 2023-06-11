@@ -47,6 +47,7 @@ public class Library {
 	                    String name = bookInfoArr[1];
 	                    int count = Integer.parseInt(bookInfoArr[2]);
                         Book book = new Book(writer, name, count);
+                        bookInfo.put(name, book);
 	                    break;
 	                case 1:
 	                    int day = Integer.parseInt(line);
@@ -78,21 +79,25 @@ public class Library {
         for (int day : days) {
             System.out.println("Day " + day + ":");
 
+
             // Print waiting customers
+            System.out.println("Customer info:");
             boolean hasWaitingCustomers = false;
             PriorityQueue<Customer> tempQueue = new PriorityQueue<>(waitingCustomers);
             while (!tempQueue.isEmpty()) {
                 Customer customer = tempQueue.poll();
                 if (customer.getReservationStartDay() + customer.getTotalReservationDay() == day) {
-                    System.out.println("C" + customer.getCustomerId() + " waits " + customer.getBookName() + " since day " + customer.getReservationStartDay() + ".");
+                    System.out.println(customer.getCustomerId() + " waits " + customer.getBookName() + " since day " + customer.getReservationStartDay() + ".");
                     hasWaitingCustomers = true;
                 }
             }
+            
             if (!hasWaitingCustomers) {
                 System.out.println("No waiting customer");
             }
 
             // Print book info
+            System.out.println("Book info:");
             for (Map.Entry<String, Book> entry : bookInfo.entrySet()) {
                 String bookName = entry.getKey();
                 Book book = entry.getValue();
@@ -103,11 +108,12 @@ public class Library {
                     while (!tempQueue2.isEmpty()) {
                         Customer customer = tempQueue2.poll();
                         if (customer.getBookName().equals(bookName)) {
-                            System.out.println("C" + customer.getCustomerId() + " waits " + customer.getBookName() + " since day " + customer.getReservationStartDay() + ".");
+                            System.out.println(customer.getCustomerId() + " waits " + customer.getBookName() + " since day " + customer.getReservationStartDay() + ".");
                             break;
                         }
                     }
                 }
+                
             }
 
             // Update book info and waiting customers
@@ -128,19 +134,6 @@ public class Library {
                 }
             }
         }
-    }
-
-    private static void parseBookInfo(String line, Map<String, Book> bookInfo) {
-        String[] parts = line.split(",");
-        if (parts.length != 3) {
-            System.out.println("Invalid book info: " + line);
-            return;
-        }
-        String author = parts[0];
-        String bookName = parts[1];
-        int numCopies = Integer.parseInt(parts[2]);
-        Book book = new Book(author, bookName, numCopies);
-        bookInfo.put(bookName, book);
     }
 }
 
