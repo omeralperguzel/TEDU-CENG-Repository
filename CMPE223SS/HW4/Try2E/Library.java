@@ -83,6 +83,7 @@ public class Library {
             // Print waiting customers
             System.out.println("Customer info:");
             boolean hasWaitingCustomers = false;
+            boolean hasWaitingCustomers2 = false;
             PriorityQueue<Customer> tempQueue = new PriorityQueue<>(waitingCustomers);
             while (!tempQueue.isEmpty()) {
                 Customer customer = tempQueue.poll();
@@ -91,7 +92,6 @@ public class Library {
                     hasWaitingCustomers = true;
                 }
             }
-            
             if (!hasWaitingCustomers) {
                 System.out.println("No waiting customer");
             }
