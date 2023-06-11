@@ -13,12 +13,13 @@ public class Library {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter log file name:");
         String fileName = scanner.nextLine();
+        scanner.close();
 
         Map<String, Book> bookInfo = new HashMap<>();
         PriorityQueue<Customer> waitingCustomers = new PriorityQueue<>();
         List<Integer> days = new ArrayList<>();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/omer/TEDU-CENG-Repository/CMPE223SS/HW4/Try2/log1.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
 	            String line =  "";
 	            int section = 0; // 0: Book Info, 1: Day Info, 2: Customer Info
 
@@ -83,7 +84,6 @@ public class Library {
             // Print waiting customers
             System.out.println("Customer info:");
             boolean hasWaitingCustomers = false;
-            boolean hasWaitingCustomers2 = false;
             PriorityQueue<Customer> tempQueue = new PriorityQueue<>(waitingCustomers);
             while (!tempQueue.isEmpty()) {
                 Customer customer = tempQueue.poll();
@@ -91,6 +91,22 @@ public class Library {
                     System.out.println(customer.getCustomerId() + " waits " + customer.getBookName() + " since day " + customer.getReservationStartDay() + ".");
                     hasWaitingCustomers = true;
                 }
+            }
+            for (Map.Entry<String, Book> entry : bookInfo.entrySet()) {
+                Book book = entry.getValue();
+                String bookName = entry.getKey();
+                int numCopies = book.getNumCopies();
+                if (numCopies == 0) {
+                    PriorityQueue<Customer> tempQueue2 = new PriorityQueue<>(waitingCustomers);
+                    while (!tempQueue2.isEmpty()) {
+                        Customer customer = tempQueue2.poll();
+                        if (customer.getBookName().equals(bookName)) {
+                            System.out.println(customer.getCustomerId() + " waits " + customer.getBookName() + " since day " + customer.getReservationStartDay() + ".");
+                            break;
+                        }
+                    }
+                }
+            
             }
             if (!hasWaitingCustomers) {
                 System.out.println("No waiting customer");
@@ -102,18 +118,7 @@ public class Library {
                 String bookName = entry.getKey();
                 Book book = entry.getValue();
                 int numCopies = book.getNumCopies();
-                System.out.println(book.getAuthor() + "," + bookName + "," + numCopies);
-                if (numCopies == 0) {
-                    PriorityQueue<Customer> tempQueue2 = new PriorityQueue<>(waitingCustomers);
-                    while (!tempQueue2.isEmpty()) {
-                        Customer customer = tempQueue2.poll();
-                        if (customer.getBookName().equals(bookName)) {
-                            System.out.println(customer.getCustomerId() + " waits " + customer.getBookName() + " since day " + customer.getReservationStartDay() + ".");
-                            break;
-                        }
-                    }
-                }
-                
+                System.out.println(book.getAuthor() + "," + bookName + "," + numCopies);                
             }
 
             // Update book info and waiting customers

@@ -1,0 +1,21 @@
+***BOOK INFO**
+J. K. Rowling,Harry Potter and the Goblet of Fire,3
+Albert Camus,The Stranger,2
+Franz Kafka,The Metamorphosis,1
+**DAY INFO**
+14
+16
+18
+30
+***CUSTOMER INFO***
+1959,C1,12,2,Harry Potter and the Goblet of Fire
+1961,C2,12,2,Harry Potter and the Goblet of Fire
+1953,C3,12,2,Harry Potter and the Goblet of Fire
+1953,C4,12,5,Harry Potter and the Goblet of Fire
+1951,C5,13,4,Harry Potter and the Goblet of Fire
+1980,C6,15,1,The Metamorphosis
+1982,C7,15,3,The Metamorphosis
+1982,C8,15,3,The Metamorphosis
+1984,C9,18,4,The Stranger
+2000,C10,19,5,The Stranger
+
