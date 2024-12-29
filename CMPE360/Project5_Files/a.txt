@@ -1,0 +1,35 @@
+In Project4, you did the parts of Shadow Ray, Blinn-Phong Model, Diffuse Shading and Ambient Light. Project5 is the continuation of the Project4. For Project5 you will add reflection, Fresnel and transmission on the work.
+
+2.4.Reflection
+
+With recursive ray tracing, the hemisphere on the top should show a reflection of the whole scene.
+
+2.5.Fresnel
+
+Since we're viewing the ground plane at a grazing angle, the reflection should be stronger.
+
+2.6.Transmission
+
+The black block should turn into glass, and the green truncated cone should show through it.
+
+Just as the render engines that come with Blender, we can change the camera, materials, and lights in our SimpleRT render engine.In the starter script, we have already setup the panels for materials/lights andhooked them up in the ray-tracing code. For objects, we will use SimpleRTMaterial.If you select an object, then go to Properties Editor → Material Tab, you will see this panel. Here you can change all the settings, and they will be updated immediately. When you render, you will see the new settings applied. Same thing for lights and camera at Properties Editor → Object Data Tab. To get consistent results between the 3D viewport and the final render, please keep the SensorFit option to Horizontal for the camera. If you want to dig really deep, the code for creating these custom panels are in the simpleRT_UIpanels script.
+
+Follow the instruction and prepare a text for homework, your writing should include all parts. Please make sure your answers are numbered as below and please make sure you write your answers like you did all of this homework.
+
+PART 1
+
+A. Save the image with reflection and add the screenshot of it on your pdf file.
+
+B. Explain your process and effect of reflection.
+
+PART 2
+
+A. Save the image with fresnel and add the screenshot of it on your pdf file.
+
+B. Explain your process and effect of fresnel.
+
+PART 3
+
+A. Save the image with transmission and add the screenshot of it on your pdf file.
+
+B. Explain your process and effect of transmission.

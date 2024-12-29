@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>WebGL Template</title>
+   <script id="vertex-shader" type="x-shader/x-vertex">
+      #version 300 es
+      in vec4 vPosition;
+      in vec4 vColor;
+      out vec4 color;
+
+      void main() {
+         gl_Position = vPosition;
+         color = vColor; // Pass the color to the fragment shader
+      }
+   </script>
+   <script id="fragment-shader" type="x-shader/x-fragment">
+      #version 300 es
+      precision mediump float;
+      in vec4 color;
+      out vec4 fragColor;
+
+      void main() {
+         fragColor = color; // Use the color passed from the vertex shader
+      }
+   </script>
+   <script type="text/javascript" src="../Common/utility.js"></script>
+   <script type="text/javascript" src="../Common/initShaders.js"></script>
+   <script type="text/javascript" src="../Common/MVnew.js"></script>
+   <script type="text/javascript" src="../Common/flatten.js"></script>
+   <script type="text/javascript" src="Lab6.js"></script>
+</head>
+<body>
+   <canvas id="gl-canvas" width="512" height="512">
+      Oops ... your browser doesn't support the HTML5 canvas element
+   </canvas>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>WebGL Template</title>
+
+   <!-- This in-line script is a vertex shader resource
+      Shaders can be linked from an external file as well.
+      First line must be shader language version, no spaces before.
+      (Actually textbook's shader loader strips leading spaces...)
+      -->
+   <script id="vertex-shader" type="x-shader/x-vertex">
+      #version 300 es
+
+      // All vertex shaders require a position input.
+      // The name can be changed.
+      // Other inputs can be added as desired for colors and other features.
+      //precision mediump float;
+
+      //in vec4 varColor;
+      in vec4 vPosition;
+      in vec4 vColor;
+
+      // This varying output is interpolated between the vertices in the
+      // primitive we are drawing before being sent to an input with
+      // matching name and type in the fragment shader
+      out vec4 varColor;
+
+      void main()
+      {
+         // gl_Position is a built-in vertex shader output.
+         // Its value should always be set by the vertex shader.
+         // The simplest shaders just copy the position attribute straight to
+         // gl_Position
+         gl_Position = vPosition;
+         varColor = vColor;
+         
+      }
+   </script>
+
+   <!-- This in-line script is a vertex shader resource
+      Shaders can be linked from an external file as well.
+      First line must be shader language version, no spaces before.
+      (Actually textbook's shader loader strips the spaces...) -->
+   <script id="fragment-shader" type="x-shader/x-fragment">
+      #version 300 es
+
+      // Sets default precision for floats.
+      // Since fragment shaders have no default precision, you must either:
+      //   - set a default before declaring types that use floating point OR
+      //   - specify the precision before each floating point declaration
+      // Choices are lowp, mediump, and highp.
+      precision mediump float;
+
+      // The output of a fragment shader is sent to draw buffers,
+      // which might be an array or the screen. The default is
+      out vec4 fragColor;
+
+      void main()
+      {
+         // In general, the fragment shader output should be set,
+         //     but this is not required.
+         // If an output is not set,
+         //    there will be no output to the corresponding draw buffer.
+         fragColor = vec4(0.0, 0.0, 0.0, 1.0);
+      }
+   </script>
+
+   <!-- These are external javascript files.
+      The first three are the textbook libraries.
+      The last one is your own javascript code. Make sure to change the name
+      to match your javascript file. -->
+   <script type="text/javascript" src="../Common/utility.js"></script>
+   <script type="text/javascript" src="../Common/initShaders.js"></script>
+   <script type="text/javascript" src="../Common/MVnew.js"></script>
+   <script type="text/javascript" src="../Common/flatten.js"></script>
+   <script type="text/javascript" src="Lab1Alt.js"></script>
+</head>
+
+<body>
+   <!-- This is the canvas - the only HTML element that can render WebGL
+      graphics. You can have more than one WebGL canvas on a web page, but
+      that gets tricky. Stick to one per page for now. -->
+   <canvas id="gl-canvas" width="512" height="512">
+      Oops ... your browser doesn't support the HTML5 canvas element
+   </canvas>
+</body>
+</html>

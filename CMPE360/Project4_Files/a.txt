@@ -1,0 +1,30 @@
+Follow the instructions carefully. Be aware of the Checkpoints below. Make sure the complete each one since we will them.
+
+This week, we will create a ray tracer using Python in Blender. The scene is created in Blender, and we will use scripts to get information from the scene through Blender's Python API, and create our own routine for bouncing lights in the scene to get rendered images. The image above shows the two main steps to our final image. For shading, we will adopt a popular shading model called Blinn-Phong. It is a simple but sufficient (at least for this simple ray tracer) approximation of how light interacts with objects, and is adopted by OpenGL and Direct3D as the default-shading model. 
+
+First, let's browse to a script called simpleRT_UIpanels and run it. In the Text Editor, you can switch between files using the dropdown button. To run a script, press the "Run Script" button on the top bar of the Text Editor. Alternatively, if you do not see the button, then you can still run the script from the menu bar above the text editor with "Text→Run Script". Nothing should appear in the command line if the script executed successfully. 
+
+The simpleRT_UIpanels script creates custom properties that will be used for our renderer such as material properties, light parameters, etc.. It then exposes these properties through the Blender UI so we can change them easily from user interface widgets. Then, switch back to the simpleRT_plugin and run it.
+
+To check if everything is working:
+
+From the Properties Editor, switch the Render Engine to SimpleRT. This is the new render engine that we just added to Blender by running the script. We will work on this render engine in this homework. The UI in Properties Editor should be refreshed. You should be able to see the "SimpleRT Render Settings" panel in the Render tab, and the "SimpleRT Dimensions" panel in the Output tab. If you still see the UI panels from other render engines, press F3 with your cursor in 3D Viewport, and type reload script and Enter to reload all the plugins.
+
+Now your task is to edit the simpleRT_plugin to finish all the TODOs.
+
+In the code, we mostly use the data types that come with Blender. mathutils.Vector is the one we use to representlocation, direction, and color. See basic usage here. The most common functions are:
+
+• vec.normalized() to return a normalized copy of vec
+• vec1.dot(vec2) to take the dot product of two vectors
+• vec.length_squared to get the squared vector length
+
+To perform element-wise vector multiplication, the best way would be to convert the vectors to numpy arrays using arr = np.array(vec) , then use arr1 * arr2 to get the result.
+
+All the TODOs are listed as comments in the Python scripts. Please read them to get started. Here we will provide general guidelines and checkpoint images you can compare with.
+
+The ray-object intersection will be taken care of by the scene.ray_cast function from Blender. Our focus will be on how to use the intersection point and surface normal to figure out color calculations and light bouncing.
+
+You have to edit simpleRT_plugin.py file to make sure everything asked in the "#" comments are working properly. 
+
+simpleRT_plugin.py looks like this:
+
