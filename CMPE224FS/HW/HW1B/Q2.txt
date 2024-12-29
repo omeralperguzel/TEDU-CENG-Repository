@@ -1,0 +1,33 @@
+Imagine you are a Computer Science student, trying to do algorithms homework. In this question, you must implement your own graph data structure by taking inspiration from the Algorithms book by Robert Sedgewick, using it to help solve problems in Java programming language and write your code as a whole. You are not allowed to use any external library or .jar file.
+
+You want to visit M museums of the city where you live by following the N undirected roads connecting these museums. However, you have a limited time to visit all the museums so you want to visit them in minimum time. You can pick any museum as the starting point of your journey. Let’s say your current position is C. Then you can move to any adjacent museum of C, but it costs your time equal to the weight of the museum. You will continue the above moves until you visit all the museums. Calculate the minimum time to visit all the museums in the city when you can choose any museum as your starting point.
+
+bu
+
+Sample Input 1:
+4 3
+1 2 1
+2 3 2
+2 4 3
+
+Sample Input 2:
+5 7
+1 2 2
+1 3 1
+1 4 3
+2 3 2
+2 4 2
+2 5 2
+4 5 1
+
+In the output, the first line prints an integer T, denoting the minimum time to visit all museums in the city. The next line gives the track you need to follow to visit all the museums. If you cannot visit all the museums in the city by starting at any point, you need to print -1. The output for the above input is as follows. Please check your program with this input as well as the others that you will create. Please note that we may use other input when judging your code.
+
+Sample Output 1:
+7
+4 2 1 2 3
+
+Sample Output 2:
+6
+3 1 2 5 4
+
+Don't forget that you will need two lines in the output and the first line prints an integer T, denoting the minimum time to visit all museums in the city. The next line gives the track you need to follow to visit all the museums like you have to visit 4 first then you have to visit 2 and so on. For instance, sample input 1 should print sample output 1, and sample input 2 should print sample output 2. 

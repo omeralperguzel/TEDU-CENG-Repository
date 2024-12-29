@@ -1,0 +1,13 @@
+Eskisehir,Ankara,10
+Eskisehir,Bolu,20
+Eskisehir,Bilecik,5
+Eskisehir,Kutahya,30
+Eskisehir,Afyonkarahisar,50
+Eskisehir,Cankiri,10
+Eskisehir,Kastamonu,5
+Cankiri,Kastamonu,12
+Ankara,Istanbul,14
+Istanbul,Cankiri,30
+Kastamonu,Corum,14
+Corum,Amasya,14
+Amasya,Tokat,12
